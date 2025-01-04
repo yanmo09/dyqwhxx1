@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东营区文华学校 - 官方网站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="captcha-overlay" id="captchaOverlay">
+        <div class="captcha-container">
+            <h2>人机验证</h2>
+            <p>请输入下方显示的验证码：</p>
+            <div class="captcha-code" id="captchaCode"></div>
+            <input type="text" id="captchaInput" placeholder="请输入验证码">
+            <button onclick="verifyCaptcha()">验证</button>
+            
+            <!-- 添加状态动画容器 -->
+            <div class="login-status-animation" id="statusAnimation">
+                <div class="loading-spinner"></div>
+                <div class="success-animation">
+                    <div class="success-icon"></div>
+                    <div class="status-text">验证成功</div>
+                </div>
+                <div class="error-animation">
+                    <div class="error-icon"></div>
+                    <div class="status-text">验证失败</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>东营区文华学校</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">学校简介</a></li>
+                <li><a href="#leadership">学校领导</a></li>
+                <li><a href="#education">教育特色</a></li>
+                <li><a href="#news">新闻动态</a></li>
+                <li><a href="friendship.html">学生友谊</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2><i class="fas fa-graduation-cap"></i> 培育英才 启迪未来</h2>
+                <p>东营区文华学校是一所由市政府投资建设的九年一贯制公办学校</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>学校简介</h2>
+            <div class="content">
+                <p>东营区文华学校位于理想之城东侧，天目山路以西，黄河路辅路以南，广利河滨河支路以北。总占地面积8.9万平方米，总建筑面积5.2万平方米，计划总投资3亿元，建设规模为90个教学班。项目分两期建设。</p>
+                <p>一期工程计划投资1.5亿元，建筑面积3万平方米，建设规模为40个教学班，主要建设中学教学楼、综合楼、风雨操场、篮球馆、游泳馆、食堂等；二期工程计划投资1.5亿元，建筑面积2.2万平方米，建设规模为50个教学班，主要建设小学教学楼、学生公寓、400米标准运动场、景观及配套工程等。</p>
+                <p>东营区文华学校是东营区政府与东营市胜利第一中学合作办学项目，教育教学设施的所有权归东营区政府，胜利一中派出管理团队，负责日常教育教学管理，东营区教育局负责监督管理。</p>
+            </div>
+        </section>
+
+        <section id="leadership" class="leadership">
+            <h2>学校领导</h2>
+            <div class="leadership-grid">
+                <div class="leader-item">
+                    <h3>校长</h3>
+                    <p>李龙琦</p>
+                </div>
+                <div class="leader-item">
+                    <h3>副校长</h3>
+                    <p>刘淑琴</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="features">
+            <h2>教育特色</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>特色项目</h3>
+                    <p>2020年7月被教育部认定为2019年全国青少年校园网球特色学校</p>
+                </div>
+                <div class="feature-item">
+                    <h3>教学理念</h3>
+                    <p>秉承"以人为本，全面发展"的教育理念，注重学生综合素质培养</p>
+                </div>
+                <div class="feature-item">
+                    <h3>办学优势</h3>
+                    <p>由胜利一中派出优秀管理团队，确保教育教学质量</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="news">
+            <h2>新闻动态</h2>
+            <div class="news-grid">
+                <article class="news-item">
+                    <h3>2024年春季招生工作启动</h3>
+                    <p>日期：2024-03-01</p>
+                </article>
+                <article class="news-item">
+                    <h3>我校举办校园网球特色活动</h3>
+                    <p>日期：2024-02-15</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 地址：山东省东营市东营区文化公园片区</p>
+                <p><i class="fab fa-weixin"></i> 微信号：dyqwhxx2018</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 东营区文华学校 版权所有</p>
+    </footer>
+
+    <script>
+    // 添加平滑滚动和导航高亮
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取所有导航链接
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        // 获取所有section
+        const sections = document.querySelectorAll('section');
+        
+        // 监听滚动事件
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // 更新激活状态
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // 点击导航链接时添加active类
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+
+    // 移动端导航菜单
+    const createMobileMenu = () => {
+        const nav = document.querySelector('nav');
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        
+        nav.appendChild(mobileMenuBtn);
+        
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    };
+
+    // 在移动端时初始化菜单
+    if (window.innerWidth <= 768) {
+        createMobileMenu();
+    }
+
+    // 生成随机验证码
+    function generateCaptcha() {
+        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let captcha = '';
+        for (let i = 0; i < 6; i++) {
+            captcha += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return captcha;
+    }
+
+    // 初始化验证码
+    let currentCaptcha = '';
+
+    // 页面加载时显示验证码
+    document.addEventListener('DOMContentLoaded', function() {
+        currentCaptcha = generateCaptcha();
+        document.getElementById('captchaCode').textContent = currentCaptcha;
+        
+        // 禁止页面滚动
+        document.body.style.overflow = 'hidden';
+    });
+
+    // 更新验证函数
+    function verifyCaptcha() {
+        const statusAnimation = document.getElementById('statusAnimation');
+        const loadingSpinner = statusAnimation.querySelector('.loading-spinner');
+        const successAnimation = statusAnimation.querySelector('.success-animation');
+        const errorAnimation = statusAnimation.querySelector('.error-animation');
+        const input = document.getElementById('captchaInput').value.toUpperCase();
+        
+        // 显示加载动画
+        statusAnimation.classList.add('show');
+        loadingSpinner.style.display = 'block';
+        successAnimation.style.display = 'none';
+        errorAnimation.style.display = 'none';
+        
+        // 模拟验证过程
+        setTimeout(() => {
+            loadingSpinner.style.display = 'none';
+            
+            if (input === currentCaptcha) {
+                // 显示成功动画
+                successAnimation.style.display = 'flex';
+                
+                // 3秒后关闭验证窗口
+                setTimeout(() => {
+                    document.getElementById('captchaOverlay').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 2000);
+            } else {
+                // 显示错误动画
+                errorAnimation.style.display = 'flex';
+                
+                // 2秒后重置
+                setTimeout(() => {
+                    statusAnimation.classList.remove('show');
+                    currentCaptcha = generateCaptcha();
+                    document.getElementById('captchaCode').textContent = currentCaptcha;
+                    document.getElementById('captchaInput').value = '';
+                }, 2000);
+            }
+        }, 1000);
+    }
+
+    // 输入框获得焦点时清除状态
+    document.getElementById('captchaInput').addEventListener('focus', function() {
+        const container = document.querySelector('.captcha-container');
+        const statusMessage = document.getElementById('statusMessage');
+        container.classList.remove('error', 'success');
+        statusMessage.className = 'status-message';
+        statusMessage.textContent = '';
+    });
+
+    // 按回车键验证
+    document.getElementById('captchaInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            verifyCaptcha();
+        }
+    });
+    </script>
+</body>
+</html> 
